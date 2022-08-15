@@ -1,0 +1,16 @@
+.saved-news-list {
+  padding: 62px 0;
+  background-color: #f5f6f7;
+}
+
+@media screen and (max-width: 420px) {
+  .saved-news-list {
+    padding: 40px 0 20px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .saved-news-list {
+    padding: 24px 0 14px;
+  }
+}

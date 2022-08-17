@@ -87,6 +87,10 @@ function App() {
     setIsSignInPopupOpen(!isSignInPopupOpen);
   };
 
+  const handleHomeMenuButton = () => {
+    setIsMenuPanelOpen(false);
+  };
+
   const handleSignInMenuButton = () => {
     openSignInPopup();
     setIsMenuPanelOpen(false);
@@ -101,6 +105,7 @@ function App() {
     >
       <div className='app'>
         <SuccessPopup
+          title='Registration successfully completed!'
           isOpen={isSuccessPopupOpen}
           onClose={closeSuccessPopup}
           onRedirectButtonClick={handleSuccessPopupButton}
@@ -126,8 +131,9 @@ function App() {
           isMenuPanelOpen={isMenuPanelOpen}
           onMenuPanelOpen={openMenuPanel}
           onMenuPanelClose={closeMenuPanel}
-          onSignInMenuButtonClick={handleSignInMenuButton}
           onSignInButtonClick={handleSignInButton}
+          onHomeMenuButtonClick={handleHomeMenuButton}
+          onSignInMenuButtonClick={handleSignInMenuButton}
         />
 
         <Main />

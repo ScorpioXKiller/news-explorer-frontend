@@ -1,23 +1,17 @@
 import Button from '../Button/Button';
 import Popup from '../Popup/Popup';
-import './PopupWithForm.css';
 
 const PopupWithForm = ({
   name,
+  title,
   isOpen,
   onClose,
   children,
   ...props
 }) => {
   return (
-    <Popup name={name} isOpen={isOpen} onClose={onClose}>
-      <h2 className='popup-with-form__title'>{props.title}</h2>
-
-      <form
-        className='auth-form'
-        name={props.name}
-        onSubmit={props.onSubmit}
-      >
+    <Popup name={name} title={title} isOpen={isOpen} onClose={onClose}>
+      <form className='auth-form' name={props.name} onSubmit={props.onSubmit}>
         {children}
 
         <Button
@@ -37,9 +31,7 @@ const PopupWithForm = ({
             onClick={props.togglePopup}
           >
             or
-            <span className='auth-form__link-text'>
-              &nbsp;{props.linkText}
-            </span>
+            <span className='auth-form__link-text'>&nbsp;{props.linkText}</span>
           </button>
         </div>
       </form>

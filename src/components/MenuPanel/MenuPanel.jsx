@@ -34,7 +34,11 @@ const MenuPanel = (props) => {
         </div>
 
         <div className='menu-panel__container'>
-          <NavLink to='/' className='menu-panel__home-link'>
+          <NavLink
+            to='/'
+            className='menu-panel__home-link'
+            onClick={props.onHomeMenuButtonClick}
+          >
             Home
           </NavLink>
 

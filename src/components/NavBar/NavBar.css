@@ -83,27 +83,19 @@
 
 .navbar__signin-button {
   width: 178px;
-  border-color: #b6bcbf;
-  color: white;
-}
-
-.navbar__signin-button:hover {
   border-color: white;
+  color: white;
 }
 
 .navbar__logout-button {
   width: 112px;
   padding-left: 19px;
-  border-color: #d1d2d6;
+  border-color: black;
   color: black;
   background-image: url('../../images/logout-icon.svg');
   background-repeat: no-repeat;
   background-position: 70px;
   text-align: left;
-}
-
-.navbar__logout-button:hover {
-  border-color: black;
 }
 
 .navbar__menu-button {
@@ -158,7 +150,7 @@
 
 @media screen and (max-width: 870px) {
   .navbar {
-    justify-content: space-evenly;
+    gap: 5vw;
   }
 
   .title {

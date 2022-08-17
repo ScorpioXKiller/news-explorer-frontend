@@ -7,7 +7,7 @@ const Register = (props) => {
   return (
     <AuthForm
       withNameField
-      name='signUpPopup'
+      name='sign-up-popup'
       title='Sign up'
       linkText='Sign in'
       emailInputId='registerForm_EmailInput'

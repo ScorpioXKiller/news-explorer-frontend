@@ -42,6 +42,10 @@
   background-image: url('../../images/bookmark-icon-marked.svg');
 }
 
+.card__save-button_marked:hover {
+  background-image: url('../../images/bookmark-icon-marked.svg');
+}
+
 .card__delete-button {
   background-image: url('../../images/trash-icon.svg');
 }
@@ -53,10 +57,11 @@
 .card__category {
   padding: 8px 20px;
   position: absolute;
-  top: 8px;
-  left: 8px;
+  top: 24px;
+  left: 24px;
   display: flex;
   align-items: center;
+  justify-content: center;
   font-family: 'Roboto';
   font-weight: 500;
   font-size: 14px;
@@ -147,6 +152,11 @@
   .card__button {
     top: 1vw;
     right: 1vw;
+  }
+
+  .card__category {
+    top: 1vw;
+    left: 1vw;
   }
 
   .card__tooltip {
@@ -242,17 +252,6 @@
 
 @media screen and (max-width: 580px) {
   .card {
-    width: 224px;
-    height: 420px;
-  }
-
-  .card__image {
-    height: 150px;
-  }
-}
-
-@media screen and (max-width: 580px) {
-  .card {
     width: 400px;
     height: 576px;
   }
@@ -260,6 +259,11 @@
   .card__button {
     top: 24px;
     right: 24px;
+  }
+
+  .card__category {
+    top: 24px;
+    left: 24px;
   }
 
   .card__tooltip {
@@ -294,6 +298,11 @@
   .card__button {
     top: 16px;
     right: 16px;
+  }
+
+  .card__category {
+    top: 16px;
+    left: 16px;
   }
 
   .card__tooltip {

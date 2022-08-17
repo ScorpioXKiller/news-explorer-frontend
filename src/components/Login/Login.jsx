@@ -6,7 +6,7 @@ const Login = (props) => {
 
   return (
     <AuthForm
-      name='signInPopup'
+      name='sign-in-popup'
       title='Sign in'
       linkText='Sign up'
       emailInputId='loginForm_EmailInput'

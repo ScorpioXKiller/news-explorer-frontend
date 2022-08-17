@@ -3,11 +3,12 @@ import './SuccessPopup.css';
 
 const SuccessPopup = (props) => {
   return (
-    <Popup name='successPopup' isOpen={props.isOpen} onClose={props.onClose}>
-      <h2 className='success-popup__title'>
-        Registration successfully completed!
-      </h2>
-
+    <Popup
+      name='success-popup'
+      title={props.title}
+      isOpen={props.isOpen}
+      onClose={props.onClose}
+    >
       <button
         className='success-popup__redirect-button'
         type='button'

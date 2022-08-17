@@ -27,6 +27,7 @@ const Header = (props) => {
       <MenuPanel
         isMenuPanelOpen={props.isMenuPanelOpen}
         onMenuPanelClose={props.onMenuPanelClose}
+        onHomeMenuButtonClick={props.onHomeMenuButtonClick}
         onSignInMenuButtonClick={props.onSignInMenuButtonClick}
       />
 

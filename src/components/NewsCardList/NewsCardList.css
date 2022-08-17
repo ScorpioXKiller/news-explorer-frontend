@@ -28,7 +28,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Roboto';
   color: black;
   background-color: white;
   transition: 0.3s ease-in-out;
@@ -36,6 +35,10 @@
 }
 
 .news-card-list__button:hover {
+  background-color: #e8e8e8;
+}
+
+.news-card-list__button:focus {
   background-color: #e8e8e8;
   color: black;
 }
@@ -110,6 +113,7 @@
 
   .news-card-list__button {
     margin-top: 20px;
+    width: 288px;
   }
 }
 

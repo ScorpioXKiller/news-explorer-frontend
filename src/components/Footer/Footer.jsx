@@ -15,16 +15,26 @@ const Footer = () => {
 
       <nav className='footer__navbar'>
         <div className='footer__nav-links'>
-          <Link to='/' className='footer__nav-link'>
+          <Link
+            to='/'
+            className='footer__nav-link'
+            target={'_top'}
+            rel='noreferrer'
+          >
             Home
           </Link>
 
-          <a href='https://practicum.yandex.com' className='footer__nav-link'>
+          <a
+            href='https://practicum.yandex.com'
+            className='footer__nav-link'
+            target={'_blank'}
+            rel='noreferrer'
+          >
             Practicum by Yandex
           </a>
         </div>
         <div className='footer__nav-icons'>
-          <a href='https://github.com'>
+          <a href='https://github.com' target={'_blank'} rel='noreferrer'>
             <img
               src={githubIcon}
               className='footer__nav-icon'
@@ -32,7 +42,7 @@ const Footer = () => {
             ></img>
           </a>
 
-          <a href='https://facebook.com'>
+          <a href='https://facebook.com' target={'_blank'} rel='noreferrer'>
             <img
               src={facebookIcon}
               className='footer__nav-icon'

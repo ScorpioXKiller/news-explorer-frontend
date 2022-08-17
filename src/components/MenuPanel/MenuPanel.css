@@ -66,6 +66,7 @@
 }
 
 .menu-panel__home-link {
+  width: max-content;
   margin-bottom: 22px;
   text-decoration: none;
   font-size: 18px;

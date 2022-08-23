@@ -1,0 +1,7 @@
+.main {
+  width: 100%;
+}
+
+.main_effect_blur {
+  filter: blur(2px);
+}

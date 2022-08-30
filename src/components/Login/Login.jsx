@@ -11,11 +11,15 @@ const Login = (props) => {
       linkText='Sign up'
       emailInputId='loginForm_EmailInput'
       passwordInputId='loginForm_PasswordInput'
-      submitButtonTitle={props.signInSubmitButtonTitle}
+      loading={props.loading}
+      submitButtonTitle={
+        !props.loading ? 'Sign in' : 'Sign in... Please wait...'
+      }
       isOpen={props.isOpen}
       onClose={props.onClose}
       onSubmit={props.onSubmit}
       togglePopup={props.togglePopup}
+      responseError={props.responseError}
     />
   );
 };

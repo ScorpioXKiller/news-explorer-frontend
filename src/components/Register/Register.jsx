@@ -12,11 +12,14 @@ const Register = (props) => {
       linkText='Sign in'
       emailInputId='registerForm_EmailInput'
       passwordInputId='registerForm_PasswordInput'
-      submitButtonTitle={props.signUpSubmitButtonTitle}
+      submitButtonTitle={
+        !props.loading ? 'Sign up' : 'Sign up... Please wait...'
+      }
       isOpen={props.isOpen}
       onClose={props.onClose}
       onSubmit={props.onSubmit}
       togglePopup={props.togglePopup}
+      responseError={props.responseError}
     ></AuthForm>
   );
 };

@@ -1,14 +1,27 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './Footer.css';
 import githubIcon from '../../images/github-icon.svg';
 import facebookIcon from '../../images/facebook-icon.svg';
 import { useContext } from 'react';
 import { PopupContext } from '../../contexts/PopupContext';
 
-const Footer = () => {
+const Footer = ({ savedArticles }) => {
   const { isPopupOpen } = useContext(PopupContext);
+  const location = useLocation();
+
+  const setFooterPosition =
+    savedArticles.length === 0 && location.pathname === '/saved-news'
+      ? 'footer_pos_bottom'
+      : '';
+
   return (
-    <footer className={isPopupOpen ? 'footer footer_effect_blur' : 'footer'}>
+    <footer
+      className={
+        isPopupOpen
+          ? `footer footer_effect_blur ${setFooterPosition}`
+          : `footer ${setFooterPosition}`
+      }
+    >
       <p className='footer__copyright'>
         &copy; {new Date().getFullYear()} Supersite, Powered by News API
       </p>

@@ -20,20 +20,33 @@ const Header = (props) => {
       }
     >
       <NavBar
+        isLoggedIn={props.isLoggedIn}
+        isMenuPanelOpen={props.isMenuPanelOpen}
+        onSavedNewsButtonClick={props.onSavedNewsButtonClick}
         onMenuPanelOpen={props.onMenuPanelOpen}
         onSignInButtonClick={props.onSignInButtonClick}
+        onSignOutButtonClick={props.onSignOutButtonClick}
       />
 
       <MenuPanel
+        isLoggedIn={props.isLoggedIn}
         isMenuPanelOpen={props.isMenuPanelOpen}
         onMenuPanelClose={props.onMenuPanelClose}
-        onHomeMenuButtonClick={props.onHomeMenuButtonClick}
+        onRedirectMenuButtonClick={props.onRedirectMenuButtonClick}
         onSignInMenuButtonClick={props.onSignInMenuButtonClick}
+        onSignOutMenuButtonClick={props.onSignOutMenuButtonClick}
       />
 
-      {location.pathname === '/' && <SearchForm />}
+      {location.pathname === '/' && (
+        <SearchForm
+          isSearchFieldEmpty={props.isSearchFieldEmpty}
+          onSearchButtonClick={props.onSearchButtonClick}
+        />
+      )}
 
-      {location.pathname === '/saved-news' && <SavedNewsHeader />}
+      {location.pathname === '/saved-news' && (
+        <SavedNewsHeader savedArticles={props.savedArticles} />
+      )}
     </header>
   );
 };

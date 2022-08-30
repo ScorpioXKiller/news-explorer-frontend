@@ -34,6 +34,7 @@
   margin-bottom: 80px;
   height: 64px;
   display: flex;
+  position: relative;
 }
 
 .search-form__field {
@@ -52,9 +53,9 @@
   outline: none;
 }
 
-.search-form__input::placeholder {
+.search-form__input_placeholder_red::placeholder {
   font-family: 'Roboto';
-  color: #b6bcbf;
+  color: red; 
 }
 
 .search-form__submit-button {

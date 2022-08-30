@@ -1,9 +1,26 @@
-import useInputValidation from '../../hooks/useInputValidation';
+import useFormValidation from '../../hooks/useFormValidation';
 import PopupWithForm from '../PopupWithForm/PopupWithForm';
 import './AuthForm.css';
 
 const AuthForm = (props) => {
-  const { inputs, errors, isValid, handleChange } = useInputValidation();
+  const { inputs, errors, isValid, handleChange, resetForm } =
+    useFormValidation();
+
+  const closeForm = () => {
+    props.onClose();
+
+    setTimeout(() => {
+      resetForm();
+    }, 300);
+  };
+
+  const toggleForm = () => {
+    props.togglePopup();
+
+    setTimeout(() => {
+      resetForm();
+    }, 300);
+  };
 
   return (
     <PopupWithForm
@@ -13,9 +30,19 @@ const AuthForm = (props) => {
       isValid={isValid}
       submitButtonTitle={props.submitButtonTitle}
       isOpen={props.isOpen}
-      onClose={props.onClose}
-      onSubmit={props.onSubmit}
-      togglePopup={props.togglePopup}
+      onClose={closeForm}
+      onSubmit={(event) =>
+        props.onSubmit(
+          event,
+          {
+            email: inputs.email || '',
+            password: inputs.password || '',
+            name: inputs.username || '',
+          },
+          () => closeForm()
+        )
+      }
+      togglePopup={toggleForm}
     >
       <label htmlFor='email' className='auth-form__field'>
         Email
@@ -73,6 +100,7 @@ const AuthForm = (props) => {
           </span>
         </label>
       )}
+      <p className='auth-form__response-error'>{props.responseError}</p>
     </PopupWithForm>
   );
 };

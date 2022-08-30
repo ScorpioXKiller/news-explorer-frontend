@@ -1,14 +1,15 @@
-import { NavLink, useHistory, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
+import SignOutButton from '../SignOutHeaderButton/SignOutButton';
+import SignInButton from '../SignInButton/SignInButton';
 import './NavBar.css';
 
 const NavBar = (props) => {
   const location = useLocation();
-  const history = useHistory();
 
-  useEffect(() => {
-    history.push('/');
-  }, [history]);
+  const setButtonTheme =
+    location.pathname === '/'
+      ? 'navbar__button navbar__button_theme_white'
+      : 'navbar__button navbar__button_theme_dark';
 
   return (
     <nav
@@ -39,38 +40,40 @@ const NavBar = (props) => {
           Home
         </NavLink>
 
-        <NavLink
-          to='/saved-news'
-          activeClassName={
-            location.pathname === '/saved-news'
-              ? 'navbar__saved-articles_active'
-              : ''
-          }
-          className={
-            location.pathname === '/'
-              ? 'navbar__saved-articles-link'
-              : 'navbar__saved-articles-link navbar__saved-articles-link_theme_dark'
-          }
-        >
-          Saved articles
-        </NavLink>
+        {props.isLoggedIn && (
+          <NavLink
+            to='/saved-news'
+            activeClassName={
+              location.pathname === '/saved-news'
+                ? 'navbar__saved-articles_active'
+                : ''
+            }
+            className={
+              location.pathname === '/'
+                ? 'navbar__saved-articles-link'
+                : 'navbar__saved-articles-link navbar__saved-articles-link_theme_dark'
+            }
+            onClick={props.onSavedNewsButtonClick}
+          >
+            Saved articles
+          </NavLink>
+        )}
 
-        <button
-          className={
-            location.pathname === '/'
-              ? 'navbar__button navbar__signin-button'
-              : 'navbar__button navbar__logout-button'
-          }
-          type='button'
-          title={location.pathname === '/' ? 'Sign in' : 'Log out'}
-          onClick={
-            location.pathname === '/'
-              ? props.onSignInButtonClick
-              : () => history.push('/')
-          }
-        >
-          {location.pathname === '/' ? 'Sign in' : 'Elise'}
-        </button>
+        {props.isLoggedIn ? (
+          <SignOutButton
+            isMenuPanelOpen={props.isMenuPanelOpen}
+            className={`navbar__button navbar__logout-button ${setButtonTheme}`}
+            titleClassName='navbar__button-title'
+            iconClassName='navbar__logout-button-icon'
+            onClick={props.onSignOutButtonClick}
+          />
+        ) : (
+          <SignInButton
+            className={`navbar__button navbar__signin-button ${setButtonTheme}`}
+            titleClassName='navbar__button-title navbar__button-title_align_center'
+            onClick={props.onSignInButtonClick}
+          />
+        )}
       </div>
 
       <button

@@ -39,7 +39,7 @@
 }
 
 .news-card-list__button:focus {
-  background-color: #e8e8e8;
+  background: #e8e8e8;
   color: black;
 }
 

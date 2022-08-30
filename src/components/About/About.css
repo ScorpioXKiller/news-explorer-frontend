@@ -4,6 +4,10 @@
   display: flex;
 }
 
+.about__image {
+  border-radius: 100%;
+}
+
 .about__container {
   max-width: 42vw;
   height: max-content;

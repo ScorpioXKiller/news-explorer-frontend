@@ -1,21 +1,22 @@
 .success-popup {
-    padding-top: 43px;
+  padding-top: 43px;
 }
 
 .success-popup__title {
-    margin: 8px 0 14px;
-    font-family: 'Roboto';
-    font-weight: 900;
-    line-height: 1.2;
+  margin: 8px 0 14px;
+  font-family: 'Roboto';
+  font-weight: 900;
+  line-height: 1.2;
 }
 
 .success-popup__redirect-button {
-    margin-top: 14px;
-    margin-bottom: 22px;
-    padding: 0;
-    border: 0;
-    font-size: 18px;
-    line-height: 1.22;
-    color: #2F71E5;
-    background-color: transparent;
+  margin-top: 14px;
+  margin-bottom: 22px;
+  padding: 0;
+  border: 0;
+  font-size: 18px;
+  line-height: 1.22;
+  color: #2f71e5;
+  background-color: transparent;
+  cursor: pointer;
 }

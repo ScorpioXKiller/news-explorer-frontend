@@ -37,7 +37,7 @@ const MenuPanel = (props) => {
         </div>
 
         <div className='menu-panel__container'>
-          {location.pathname === '/' ? (
+          {props.isLoggedIn && location.pathname === '/' ? (
             <NavLink
               to='/saved-news'
               className='menu-panel__home-link'

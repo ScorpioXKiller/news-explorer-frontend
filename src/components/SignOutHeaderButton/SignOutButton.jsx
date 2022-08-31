@@ -8,8 +8,11 @@ const SignOutButton = (props) => {
   const location = useLocation();
   const currentUser = useContext(CurrentUserContext);
 
+  const setState =
+    location.pathname === '/' ? logOutIconWhite : logOutIconBlack;
+
   const setIconColor =
-    props.isMenuPanelOpen === true ? logOutIconWhite : logOutIconBlack;
+    props.isMenuPanelOpen === false ? setState : logOutIconWhite;
 
   return (
     <button
@@ -20,11 +23,7 @@ const SignOutButton = (props) => {
     >
       <p className={props.titleClassName}>{currentUser.name}</p>
 
-      <img
-        src={location.pathname === '/' ? logOutIconWhite : setIconColor}
-        className={props.iconClassName}
-        alt='Log Out'
-      />
+      <img src={setIconColor} className={props.iconClassName} alt='Log Out' />
     </button>
   );
 };

@@ -6,6 +6,8 @@
 
 .about__image {
   border-radius: 100%;
+  width: 464px;
+  height: 464px;
 }
 
 .about__container {

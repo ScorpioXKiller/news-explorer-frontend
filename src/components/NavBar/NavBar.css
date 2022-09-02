@@ -7,13 +7,11 @@
 }
 
 .navbar_theme_dark {
-  gap: 10vw;
   border-color: rgba(196, 196, 196);
 }
 
 .title {
-  margin-left: 3vw;
-  margin-right: 34vw;
+  margin-right: 40vw;
   font-family: 'Roboto-Slab';
   font-weight: bold;
   font-size: 20px;
@@ -39,7 +37,7 @@
 .navbar__home-link {
   width: 70px;
   padding-bottom: 22px;
-  margin-right: 46px;
+  margin-right: 34px;
   text-decoration: none;
   text-align: center;
   color: #b6bcbf;
@@ -56,8 +54,8 @@
 
 .navbar__saved-articles-link {
   width: 178px;
+  margin-right: 32px;
   padding-bottom: 22px;
-  margin-right: 44px;
   text-decoration: none;
   text-align: center;
   color: #b6bcbf;
@@ -81,21 +79,43 @@
   cursor: pointer;
 }
 
+.navbar__button_theme_white {
+  color: white;
+  border-color: white;
+}
+
+.navbar__button_theme_dark {
+  color: black;
+  border-color: black;
+}
+
 .navbar__signin-button {
   width: 178px;
-  border-color: white;
-  color: white;
 }
 
 .navbar__logout-button {
   width: 112px;
-  padding-left: 19px;
-  border-color: black;
-  color: black;
-  background-image: url('../../images/logout-icon.svg');
-  background-repeat: no-repeat;
-  background-position: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__button-title {
+  margin: 0 10px 0 19px;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
   text-align: left;
+  white-space: nowrap;
+}
+
+.navbar__button-title_align_center {
+  margin: 0;
+  text-align: center;
+}
+
+.navbar__logout-button-icon {
+  margin-right: 10px;
 }
 
 .navbar__menu-button {
@@ -119,26 +139,7 @@
   }
 }
 
-@media screen and (max-width: 1110px) {
-  .navbar_theme_dark {
-    gap: 0;
-  }
-
-  .navbar__home-link {
-    margin-right: 10px;
-  }
-
-  .navbar__saved-articles-link {
-    width: 160px;
-    margin-right: 20px;
-  }
-}
-
 @media screen and (max-width: 990px) {
-  .navbar_theme_dark {
-    gap: 60px;
-  }
-
   .title {
     margin-right: 25vw;
   }
@@ -150,7 +151,7 @@
 
 @media screen and (max-width: 870px) {
   .navbar {
-    gap: 5vw;
+    gap: 10vw;
   }
 
   .title {
@@ -179,6 +180,12 @@
   .navbar__button {
     height: 40px;
     margin-top: 14px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .navbar__button-title {
+    margin-right: 0;
     font-size: 16px;
     line-height: 1.5;
   }

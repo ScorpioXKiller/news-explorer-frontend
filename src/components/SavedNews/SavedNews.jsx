@@ -1,23 +1,26 @@
-import { savedCards } from '../../data/savedCards';
+import { useContext } from 'react';
+import CurrentUserContext from '../../contexts/CurrentUserContext';
 import Card from '../Card/Card';
 import './SavedNews.css';
 
-const SavedNews = () => {
+const SavedNews = ({ savedArticles, isLoggedIn, onCardClickButton }) => {
+  const currentUser = useContext(CurrentUserContext);
+
   return (
     <section className='saved-news-list'>
       <ul className='news-card-list__container'>
-        {savedCards.map((card) => (
-          <Card
-            key={card._id}
-            date={card.date}
-            image={card.image}
-            category={card.category}
-            title={card.title}
-            article={card.article}
-            source={card.source}
-            isSaved={card.isSaved}
-          />
-        ))}
+        {savedArticles.map(
+          (article) =>
+            article.owner === currentUser._id && (
+              <Card
+                key={article._id}
+                card={article}
+                isLoggedIn={isLoggedIn}
+                onCardClickButton={onCardClickButton}
+                isSaved
+              />
+            )
+        )}
       </ul>
     </section>
   );

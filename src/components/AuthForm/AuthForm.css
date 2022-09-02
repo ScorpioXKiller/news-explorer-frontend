@@ -1,5 +1,5 @@
 .auth-form {
-    margin-top: 22px;
+  margin-top: 22px;
 }
 
 .auth-form__field {
@@ -26,6 +26,12 @@
   margin-bottom: 10px;
   font-size: 12px;
   line-height: 1.25;
+  color: red;
+}
+
+.auth-form__response-error {
+  margin: 0;
+  text-align: center;
   color: red;
 }
 

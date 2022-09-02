@@ -74,20 +74,26 @@
   color: white;
 }
 
-.menu-panel__signin-button {
+.menu-panel__button {
   width: 100%;
   height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
   background-color: transparent;
-  border: solid #b6bcbf 2px;
+  border: solid white 2px;
+  border-radius: 100px;
+  cursor: pointer;
 }
 
-.menu-panel__signin-button:hover {
-  background-color: transparent;
-  border-color: white;
-}
-
-.menu-panel__signin-button:focus {
-  background-color: transparent;
+.menu-panel__button-title {
+  margin: 0;
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.33;
+  color: white;
 }
 
 @media screen and (min-width: 621px) {
